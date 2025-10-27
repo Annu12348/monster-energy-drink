@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "Brush";
+    src: url("../public/font/Dirty Brush.ttf");
+}
+
+@font-face {
+    font-family: "Kaushan Script";
+    src: url("../public/font/KaushanScript-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../public/font/Poppins-Regular.ttf");
+}
