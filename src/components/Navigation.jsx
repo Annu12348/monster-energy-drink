@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaShoppingBag } from "react-icons/fa";
+import { FiAlignJustify } from "react-icons/fi";
 
 const Navigation = () => {
+  const [ isOpen, setIsOpen ] = useState(false)
   return (
-    <div className="w-full h-20 px-8 flex items-center  justify-between absolute z-60 ">
-      <img className="h-11 object-cover  " src="./download.png" />
+    <div className="w-full md:h-20 h-15 md:px-8 px-2 flex items-center  justify-between absolute z-60 ">
+      <img className="md:h-11 h-9 object-cover  " src="https://ik.imagekit.io/wr6ziyjiu/monster-logo.png?updatedAt=1753179997542" />
 
-      <div className="flex items-center justify-center gap-7 bg-[#d4d4d453] border-1 border-[#e19494] px-4 py-2 rounded-full ">
+      <div className="md:flex hidden   items-center justify-center gap-7  border-1 border-[#e19494] px-4 py-1.5 rounded-full ">
         <NavLink
           to="/"
           className={({ isActive }) =>
@@ -84,14 +86,17 @@ const Navigation = () => {
 
       <div className="flex items-center justify-center gap-3 ">
         <Link
-          to="/sign-up"
-          className="bg-[#90CF23] px-5 rounded-full font-semibold capitalize py-1.5 "
+          to="https://stirred-tick-94.accounts.dev/sign-in?redirect_url=https%3A%2F%2Fmonster-energy-drink-frontend.onrender.com%2F"
+          className="bg-[#90CF23] md:px-5 px-3 rounded-full font-semibold capitalize py-1.5 "
         >
           sign in
         </Link>
         <span className="bg-[#90CF23] p-1.5 rounded-full text-xl ">
           <FaShoppingBag />
         </span>
+        <button className="text-2xl text-white font-semibold ">
+          <FiAlignJustify />
+        </button>
       </div>
     </div>
   );

@@ -5,9 +5,13 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
 import { AiOutlineYoutube } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import { BsBrightnessHigh } from "react-icons/bs";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 const Home = () => {
-  const [timer, setTimer] = useState("");
+  const [ timer, setTimer ] = useState("");
+
   const CardData = [
     {
       imageUrl: "product-1.webp",
@@ -77,9 +81,9 @@ const Home = () => {
           className="w-full h-full object-cover"
           src="/video.webm"
         />
-        <div className="w-full py-1 px-8   absolute top-35 left-0 z-10 flex items-center justify-between">
-          <div>
-            <h1 className="text-5xl   w-[60%] text-white tracking-tight font-[Kaushan Script]">
+        <div className="w-full py-1 px-8   absolute top-35 left-0 z-10 md:flex hidden items-center justify-between">
+          <div className="">
+            <h1 className="text-5xl w-[60%] text-white tracking-tight font-[Kaushan Script]">
               Ignite your Pulse with{" "}
               <span className="font-[Brush] text-6xl  text-[#9AE600] ">
                 Caffeine
@@ -123,21 +127,36 @@ const Home = () => {
               })()}
           </div>
         </div>
-
-        <div className="w-full py-1 px-8  absolute top-100  left-0 z-10 flex items-center justify-between">
+        <div className="w-full py-1 px-8  absolute top-100  left-0 z-10 md:flex hidden items-center justify-between">
           <div className="">
-            <span className="text-xl text-zinc-100 ">
+            <Link
+              to="https://www.facebook.com/MonsterEnergy"
+              target="_blank"
+              className="text-xl text-zinc-100 "
+            >
               <FaFacebookF />
-            </span>
-            <span className="mt-11 block text-xl text-zinc-400 ">
+            </Link>
+            <Link
+              to="https://x.com/MonsterEnergy?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+              target="_blank"
+              className="mt-11 block text-xl text-zinc-400 "
+            >
               <FaXTwitter />
-            </span>
-            <span className="mt-11 block text-xl text-zinc-300 ">
+            </Link>
+            <Link
+              target="_blank"
+              to="https://www.instagram.com/monsterenergy/"
+              className="mt-11 block text-xl text-zinc-300 "
+            >
               <FaInstagram />
-            </span>
-            <span className="mt-11 block text-xl text-zinc-300 ">
+            </Link>
+            <Link
+              target="_blank"
+              to="https://www.youtube.com/monsterenergy"
+              className="mt-11 block text-xl text-zinc-300 "
+            >
               <AiOutlineYoutube />
-            </span>
+            </Link>
           </div>
 
           <div className="flex flex-col items-end ">
@@ -155,13 +174,52 @@ const Home = () => {
             />
           </div>
         </div>
+        <div className="w-full px-2 py-8   absolute bottom-0 flex md:hidden items-center justify-center flex-col ">
+          <h1 className="text-2xl w-[60%] text-white leading-9 tracking-tight font-[Kaushan Script] relative">
+            Ignite your Pulse With{" "}
+            <span className="font-[Brush] text-3xl    text-[#9AE600] ">
+              Caffeine
+            </span>
+          </h1>
+
+          <div className="w-full flex items-center justify-cente px-16 mt-5  gap-8 ">
+            <Link
+              to="https://www.facebook.com/MonsterEnergy"
+              target="_blank"
+              className="text-xl text-zinc-100 "
+            >
+              <FaFacebookF />
+            </Link>
+            <Link
+              to="https://x.com/MonsterEnergy?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+              target="_blank"
+              className=" block text-xl text-zinc-400 "
+            >
+              <FaXTwitter />
+            </Link>
+            <Link
+              target="_blank"
+              to="https://www.instagram.com/monsterenergy/"
+              className=" block text-xl text-zinc-300 "
+            >
+              <FaInstagram />
+            </Link>
+            <Link
+              target="_blank"
+              to="https://www.youtube.com/monsterenergy"
+              className=" block text-xl text-zinc-300 "
+            >
+              <AiOutlineYoutube />
+            </Link>
+          </div>
+        </div>
       </section>
 
-      <section className="w-full h-screen flex flex-col items-center justify-center ">
-        <h1 className="text-white font-[Brush] text-8xl w-[50%] text-center ">
+      <section className="w-full   h-screen flex flex-col items-center justify-center ">
+        <h1 className="text-white font-[Brush] text-8xl  w-[50%] text-center ">
           STIR UP YOUR FEARLESS PAST AND
         </h1>
-        <h1 className="text-white border-8 border-black px-4 bg-[#78BB00] text-8xl absolute -rotate-8 font-[Brush]">
+        <h1 className="text-black border-8  border-black px-4 bg-[#78BB00] text-8xl absolute -rotate-8 font-[Brush]">
           FIRE UP
         </h1>
         <h1 className="text-white font-[Brush] text-8xl w-[70%] mt-25 text-center ">
@@ -185,32 +243,67 @@ const Home = () => {
           </h1>
         </div>
 
-        <div className="w-full mt-39 flex gap-9 flex-nowrap overflow-y-auto px-2 scrollbar-thin scrollbar-thumb-transparent scrollbar-track-transparent">
-          <div className="w-full flex gap-12 flex-nowrap">
-            {CardData.map((card, idx) => (
-              <div
-                key={idx}
-                className="h-[64vh] w-[42vh] rounded-2xl flex-shrink-0"
-              >
-                <div className="w-full bg-blue-500 overflow-hidden h-[80%] rounded-2xl">
-                  <img
-                    className="w-full h-full object-cover"
-                    src={card.imageUrl}
-                    alt="images only show"
-                  />
-                </div>
-                <h1 className="font-[Kaushan Script] mt-4 text-center font-normal capitalize text-white text-xl">
-                  {card.title}
-                </h1>
+        <div className="w-full p-2   mt-35 flex gap-10 overflow-x-auto whitespace-nowrap">
+          {CardData.map((card) => (
+            <div
+              key={card.title}
+              className="w-[43vh] h-[62vh]  rounded-2xl inline-block flex-shrink-0"
+            >
+              <div className="w-full h-[84%]  rounded-2xl overflow-hidden">
+                <img
+                  className="w-full h-full object-cover "
+                  src={card.imageUrl}
+                  alt="images show only"
+                />
               </div>
-            ))}
-          </div>
+              <h1 className="text-xl capitalize text-white font-[Poppins]  text-center mt-3 ">
+                {card.title}
+              </h1>
+            </div>
+          ))}
         </div>
       </section>
 
-      <section className="w-full h-[84vh] bg-[#E2C5CA] rounded-t-2xl  "></section>
+      <footer className="w-full h-[88vh] relative bg-[#E2C5CA] rounded-t-2xl flex items-start  justify-center overflow-hidden  ">
+        <img
+          className="w-[45%] absolute -top-3  -rotate-16 -left-45  object-cover "
+          src="/labubu.webp"
+          alt="images show only"
+        />
+
+        <div className="w-[60vh] p-3 mr-24   mt-29 flex flex-col items-center justify-center ">
+          <h1 className="flex px-5 rounded-full  py-2 items-center justify-center gap-3 font-[Kaushan Script] font-bold  bg-[#c597cf] ">
+            <span className="text-xl mt-0.5 text-black  ">
+              <BsBrightnessHigh />
+            </span>
+            BOOST ENERYGY
+          </h1>
+          <h1 className="mt-6 text-center leading-14 font-[Brush] text-6xl ">
+            Turning fantasies into reality.
+          </h1>
+          <p className="text-center font-[Brush]  w-[80%] mt-5 text-xl ">
+            The full strength of monster is comes from naturally infused
+            taurine.
+          </p>
+          <button className="text-xl mt-5 font-[Brush] capitalize border flex items-center justify-center gap-6 px-6 py-2 rounded-full ">
+            drink it up
+            <IoIosArrowRoundForward />
+          </button>
+        </div>
+
+        <img
+          className="w-[44%] absolute -top-4  rotate-16 -right-24  object-cover "
+          src="/labubu.webp"
+          alt="images show only"
+        />
+      </footer>
     </div>
   );
 };
 
 export default Home;
+//5:50 to 8:40 = 2:50
+//10:00 to 11:40 = 1:40
+//2:18 to 3:18 = 1:00
+//7:00 to 
+// 5Hourse 30Minat;

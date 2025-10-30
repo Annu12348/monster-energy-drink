@@ -7,6 +7,7 @@ import Order from "../page/Order";
 import Contact from "../page/Contact";
 import Collab from "../page/Collab";
 import SignUp from "../page/SignUp";
+import CardDetails from "../page/CardDetails";
 
 const Router = () => {
   return (
@@ -14,6 +15,7 @@ const Router = () => {
       <Route path="/" element={<Home />} />
       <Route path="/store" element={<Store />} />
       <Route path="/drinks" element={<Drinks />} />
+      <Route path="/drinks/:id" element={<CardDetails />} />
       <Route path="/orders" element={<Order />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/collab" element={<Collab />} />
