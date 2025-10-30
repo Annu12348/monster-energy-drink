@@ -6,6 +6,7 @@ const Collab = () => {
     <div>
     <Navigation />
     </div>
+    
   )
 }
 
