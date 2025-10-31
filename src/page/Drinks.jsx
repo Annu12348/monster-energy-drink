@@ -30,7 +30,6 @@ const Drinks = () => {
         "The original green Monster Energy drink delivers a powerful punch with a smooth flavor.",
       reviews: ["Perfect pre-workout drink!", "Strong and tasty."],
     },
-
     {
       id: 2,
       name: "Monster Mango Loco",
@@ -54,7 +53,6 @@ const Drinks = () => {
         "Mango Loco is a heavenly blend of exotic juices mixed with Monster’s energy blend.",
       reviews: ["Love the tropical vibe!", "My go-to energy juice!"],
     },
-
     {
       id: 3,
       name: "Monster Ultra Sunrise",
@@ -78,7 +76,6 @@ const Drinks = () => {
         "Crisp citrus flavor with zero sugar, designed for early risers and grind chasers.",
       reviews: ["Refreshing and no sugar!", "Amazing start to the day."],
     },
-
     {
       id: 4,
       name: "Monster Zero Sugar",
