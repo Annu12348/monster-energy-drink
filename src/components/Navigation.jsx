@@ -91,10 +91,10 @@ const Navigation = () => {
         >
           sign in
         </Link>
-        <span className="bg-[#90CF23] p-1.5 rounded-full text-xl ">
+        <Link to='/drinks/cart' className="bg-[#90CF23] p-1.5 rounded-full text-xl ">
           <FaShoppingBag />
-        </span>
-        <button className="text-2xl text-white font-semibold ">
+        </Link>
+        <button className="text-2xl md:hidden text-white font-semibold ">
           <FiAlignJustify />
         </button>
       </div>

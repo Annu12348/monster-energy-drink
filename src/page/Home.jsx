@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Navigation from "../components/Navigation";
 import { FaRegUser } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
@@ -8,6 +8,7 @@ import { AiOutlineYoutube } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { BsBrightnessHigh } from "react-icons/bs";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import gsap from "gsap";
 
 const Home = () => {
   const [ timer, setTimer ] = useState("");
@@ -68,6 +69,26 @@ const Home = () => {
     const intervalId = setInterval(updateClock, 1000);
 
     return () => clearInterval(intervalId);
+  }, []);
+
+  
+
+  const marqueeRef = useRef(null);
+
+  useEffect(() => {
+    const element = marqueeRef.current;
+
+    // 🔥 1) Content duplicate for perfect infinite loop
+    const clone = element.innerHTML;
+    element.innerHTML += clone;
+
+    // 🔥 2) GSAP animation (Smooth, Infinite, No Jitter)
+    gsap.to(element, {
+      x: "-50%",          // Half width because content is doubled
+      duration: 1,       // Slow + Premium feeling (Industry standard)
+      ease: "none",       // Linear smooth scroll
+      repeat: -1,         // Infinite
+    });
   }, []);
 
   return (
@@ -227,7 +248,7 @@ const Home = () => {
         </h1>
       </section>
 
-      <section className="w-full  min-h-screen py-3  relative ">
+      <section className="w-full   min-h-screen py-3  relative ">
         <div className="px-[20vh] ">
           <h1 className="text-8xl leading-none uppercase font-[Brush] text-white ">
             we have
@@ -243,7 +264,7 @@ const Home = () => {
           </h1>
         </div>
 
-        <div className="w-full p-2   mt-35 flex gap-10 overflow-x-auto whitespace-nowrap">
+        {/*<div className="w-full p-2    mt-35 flex gap-10 overflow-x-auto whitespace-nowrap">
           {CardData.map((card) => (
             <div
               key={card.title}
@@ -261,7 +282,33 @@ const Home = () => {
               </h1>
             </div>
           ))}
-        </div>
+        </div>*/}
+
+        <div className="w-full overflow-hidden mt-10 p-2">
+      <div
+        ref={marqueeRef}
+        className="flex gap-10 whitespace-nowrap"
+      >
+        {CardData.map((card) => (
+          <div
+            key={card.title}
+            className="w-[43vh] h-[62vh] rounded-2xl inline-block flex-shrink-0"
+          >
+            <div className="w-full h-[84%] rounded-2xl overflow-hidden">
+              <img
+                className="w-full h-full object-cover"
+                src={card.imageUrl}
+                alt={card.title}
+              />
+            </div>
+
+            <h1 className="text-xl capitalize text-white font-[Poppins] text-center mt-3">
+              {card.title}
+            </h1>
+          </div>
+        ))}
+      </div>
+    </div>
       </section>
 
       <footer className="w-full h-[88vh] relative bg-[#E2C5CA] rounded-t-2xl flex items-start  justify-center overflow-hidden  ">
