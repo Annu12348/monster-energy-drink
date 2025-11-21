@@ -14,3 +14,11 @@
     font-family: "Poppins";
     src: url("../public/font/Poppins-Regular.ttf");
 }
+
+#mainScrollBar::-webkit-scrollbar{
+    display: none;
+}
+
+#mainScrollBar1::-webkit-scrollbar{
+    display: none;
+}

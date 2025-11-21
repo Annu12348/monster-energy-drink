@@ -1,11 +1,211 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  localDatas: null,
-}
+  localDatas: [
+    {
+      id: 1,
+      name: "Monster Original",
+      flavor: "Original",
+      type: "Regular",
+      packSize: "Single cane",
+      price: 99,
+      volume: "473ml",
+      caffeineContent: "160mg",
+      imagesUrl: "/product-1.webp",
+      available: true,
+      rating: 4.6,
+      ingredients: [
+        "Carbonated Water",
+        "Sugar",
+        "Caffeine",
+        "Taurine",
+        "Ginseng Extract",
+      ],
+      description:
+        "The original green Monster Energy drink delivers a powerful punch with a smooth flavor.",
+      reviews: ["Perfect pre-workout drink!", "Strong and tasty."],
+    },
+    {
+      id: 2,
+      name: "Monster Mango Loco",
+      flavor: "Mango Loco",
+      type: "Juice",
+      packSize: "Pack of 4",
+      price: 200,
+      volume: "473ml",
+      caffeineContent: "150mg",
+      imagesUrl: "/product-2.webp",
+      available: true,
+      rating: 4.8,
+      ingredients: [
+        "Mango Juice",
+        "Apple Juice",
+        "Guava",
+        "Caffeine",
+        "Taurine",
+      ],
+      description:
+        "Mango Loco is a heavenly blend of exotic juices mixed with Monster’s energy blend.",
+      reviews: ["Love the tropical vibe!", "My go-to energy juice!"],
+    },
+    {
+      id: 3,
+      name: "Monster Ultra Sunrise",
+      flavor: "Ultra Sunrise",
+      type: "Ultra",
+      packSize: "Pack of 12",
+      price: 299,
+      volume: "355ml",
+      caffeineContent: "140mg",
+      imagesUrl: "/product-3.webp",
+      available: true,
+      rating: 4.7,
+      ingredients: [
+        "Carbonated Water",
+        "Citric Acid",
+        "Natural Flavors",
+        "Caffeine",
+        "Ginseng Extract",
+      ],
+      description:
+        "Crisp citrus flavor with zero sugar, designed for early risers and grind chasers.",
+      reviews: ["Refreshing and no sugar!", "Amazing start to the day."],
+    },
+    {
+      id: 4,
+      name: "Monster Zero Sugar",
+      flavor: "Zero Sugar",
+      type: "Zero Sugar",
+      packSize: "Single cane",
+      price: 90,
+      volume: "473ml",
+      caffeineContent: "140mg",
+      imagesUrl: "/product-4.webp",
+      available: true,
+      rating: 4.3,
+      ingredients: [
+        "Carbonated Water",
+        "Erythritol",
+        "Sucralose",
+        "Caffeine",
+        "Taurine",
+      ],
+      description:
+        "All the buzz, none of the sugar. Classic Monster energy with a guilt-free formula.",
+      reviews: ["Tastes just like the original!", "Love the zero calories."],
+    },
+    {
+      id: 5,
+      name: "Monster Watermelon",
+      flavor: "Watermelon",
+      type: "Ultra",
+      packSize: "Pack of 4",
+      price: 160,
+      volume: "355ml",
+      caffeineContent: "150mg",
+      imagesUrl: "/product-5.webp",
+      available: true,
+      rating: 4.5,
+      ingredients: [
+        "Watermelon Juice",
+        "Carbonated Water",
+        "Caffeine",
+        "B Vitamins",
+      ],
+      description:
+        "Bright and bold watermelon flavor with a clean, refreshing finish and zero sugar.",
+      reviews: ["So fresh!", "Summer vibes in a cane."],
+    },
+    {
+      id: 6,
+      name: "Monster Hydro",
+      flavor: "Watermelon",
+      type: "Hydro",
+      packSize: "Single cane",
+      price: 110,
+      volume: "650ml",
+      caffeineContent: "188mg",
+      imagesUrl: "/product-6.webp",
+      available: true,
+      rating: 4.2,
+      ingredients: ["Water", "Electrolytes", "Caffeine", "L-Carnitine"],
+      description:
+        "Hydration meets energy. Ideal for athletes needing a fuel + hydration boost.",
+      reviews: ["Hydrating and energetic!", "Great after workout."],
+    },
+    {
+      id: 7,
+      name: "Monster Rehab",
+      flavor: "Mango Loco",
+      type: "Rehab",
+      packSize: "Pack of 12",
+      price: 300,
+      volume: "473ml",
+      caffeineContent: "160mg",
+      imagesUrl: "/product-9.webp",
+      available: false,
+      rating: 4.4,
+      ingredients: ["Tea Extract", "Mango Juice", "Electrolytes", "Caffeine"],
+      description:
+        "Non-carbonated drink with electrolytes and tea-based mango flavor. Rehydrates and energizes.",
+      reviews: ["Mellow and effective!", "Great post-run drink."],
+    },
+    {
+      id: 8,
+      name: "Monster Ultra Sunrise",
+      flavor: "Ultra Sunrise",
+      type: "Ultra",
+      packSize: "Pack of 4",
+      price: 300,
+      volume: "355ml",
+      caffeineContent: "140mg",
+      imagesUrl: "/product-8.webp",
+      available: true,
+      rating: 4.7,
+      ingredients: ["Carbonated Water", "Caffeine", "Sucralose", "Citric Acid"],
+      description:
+        "Zero sugar citrus-flavored energy drink in a budget-friendly 4-pack.",
+      reviews: ["Good value!", "Crisp flavor, no calories."],
+    },
+    {
+      id: 9,
+      name: "Monster Juice Punch",
+      flavor: "Mango Loco",
+      type: "Juice",
+      packSize: "Pack of 12",
+      price: 310,
+      volume: "473ml",
+      caffeineContent: "160mg",
+      imagesUrl: "/product-10.webp",
+      available: true,
+      rating: 4.6,
+      ingredients: ["Mixed Juices", "Carbonated Water", "Caffeine", "Taurine"],
+      description:
+        "A fruity explosion with high-energy kick, combining flavor and performance.",
+      reviews: ["My favorite flavor!", "Fruit punch for adults!"],
+    },
+    {
+      id: 10,
+      name: "Monster Regular OG",
+      flavor: "Original",
+      type: "Regular",
+      packSize: "Single cane",
+      price: 85,
+      volume: "473ml",
+      caffeineContent: "160mg",
+      imagesUrl: "/product-11.webp",
+      available: true,
+      rating: 4.5,
+      ingredients: ["Carbonated Water", "Sugar", "Caffeine", "Taurine"],
+      description:
+        "The OG flavor that started it all. Smooth, bold, and addictive.",
+      reviews: ["Still the best!", "Classic for a reason."],
+    },
+  ], 
+};
 
-export const AuthenticationSlice = createSlice({
-  name: "Local",
+export const createdSlice = createSlice({
+  name: "createdRedux",
   initialState,
   reducers: {
     setLocalDatas: (state, action) => {
@@ -14,6 +214,6 @@ export const AuthenticationSlice = createSlice({
   },
 });
 
-export const { setLocalDatas } = AuthenticationSlice.actions;
-export default AuthenticationSlice.reducer;
-
+export const { setLocalDatas } = createdSlice.actions;
+export default createdSlice.reducer;
+//10:00 to 

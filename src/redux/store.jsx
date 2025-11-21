@@ -1,6 +1,7 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import AuthenticationReducer from "../redux/reducer/createSlice";
+import { configureStore } from '@reduxjs/toolkit';
+import createReducer from "../redux/reducer/createSlice";
 import storage from 'redux-persist/lib/storage';
+import { combineReducers } from '@reduxjs/toolkit';
 import {
   persistReducer,
   persistStore,
@@ -13,17 +14,20 @@ import {
 } from 'redux-persist';
 
 const persistConfig = {
-  key: 'Vingo_roots',
+  key: 'Monsters-Drinkes',
   version: 1,
   storage,
-  whitelist: ['createdRedux'], // Only Auth state is persisted
+  whitelist: ['createdRedux'],
 };
 
-const rootReducer = combineReducers({
-  createdRedux: AuthenticationReducer,
-});
+const rootReducer = {
+  createdRedux: createReducer,
+};
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+const persistedReducer = persistReducer(
+  persistConfig,
+  combineReducers(rootReducer)
+);
 
 const store = configureStore({
   reducer: persistedReducer,
@@ -37,5 +41,3 @@ const store = configureStore({
 
 export const persistor = persistStore(store);
 export default store;
-
-//1:00 to 2:00 tak 

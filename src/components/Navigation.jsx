@@ -13,7 +13,7 @@ const Navigation = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            `text-md font-semibold capitalize ${
+            `text-md capitalize ${
               isActive
                 ? "text-black bg-[#EDF0E6] px-4 rounded-full py-1"
                 : "text-white"
@@ -25,7 +25,7 @@ const Navigation = () => {
         <NavLink
           to="/store"
           className={({ isActive }) =>
-            `text-md font-semibold capitalize ${
+            `text-md capitalize ${
               isActive
                 ? "text-black bg-[#EDF0E6] px-4 rounded-full py-1"
                 : "text-white"
@@ -37,7 +37,7 @@ const Navigation = () => {
         <NavLink
           to="/drinks"
           className={({ isActive }) =>
-            `text-md font-semibold capitalize ${
+            `text-md capitalize ${
               isActive
                 ? "text-black bg-[#EDF0E6] px-4 rounded-full py-1"
                 : "text-white"
@@ -47,9 +47,9 @@ const Navigation = () => {
           drinks
         </NavLink>
         <NavLink
-          to="/orders"
+          to="https://stirred-tick-94.accounts.dev/sign-in?redirect_url=https%3A%2F%2Fmonster-energy-drink-frontend.onrender.com%2F"
           className={({ isActive }) =>
-            `text-md font-semibold capitalize ${
+            `text-md capitalize ${
               isActive
                 ? "text-black bg-[#EDF0E6] px-4 rounded-full py-1"
                 : "text-white"
@@ -61,7 +61,7 @@ const Navigation = () => {
         <NavLink
           to="/contact"
           className={({ isActive }) =>
-            `text-md font-semibold capitalize ${
+            `text-md capitalize ${
               isActive
                 ? "text-black bg-[#EDF0E6] px-4 rounded-full py-1"
                 : "text-white"
@@ -73,7 +73,7 @@ const Navigation = () => {
         <NavLink
           to="/collab"
           className={({ isActive }) =>
-            `text-md font-semibold capitalize ${
+            `text-md capitalize ${
               isActive
                 ? "text-black bg-[#EDF0E6] px-4 rounded-full py-1"
                 : "text-white"
