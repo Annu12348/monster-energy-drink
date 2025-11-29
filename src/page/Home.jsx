@@ -11,7 +11,7 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import gsap from "gsap";
 
 const Home = () => {
-  const [ timer, setTimer ] = useState("");
+  const [timer, setTimer] = useState("");
 
   const CardData = [
     {
@@ -71,8 +71,6 @@ const Home = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  
-
   const marqueeRef = useRef(null);
 
   useEffect(() => {
@@ -84,10 +82,10 @@ const Home = () => {
 
     // 🔥 2) GSAP animation (Smooth, Infinite, No Jitter)
     gsap.to(element, {
-      x: "-50%",          // Half width because content is doubled
-      duration: 1,       // Slow + Premium feeling (Industry standard)
-      ease: "none",       // Linear smooth scroll
-      repeat: -1,         // Infinite
+      x: "-50%", // Half width because content is doubled
+      duration: 1, // Slow + Premium feeling (Industry standard)
+      ease: "none", // Linear smooth scroll
+      repeat: -1, // Infinite
     });
   }, []);
 
@@ -264,51 +262,28 @@ const Home = () => {
           </h1>
         </div>
 
-        {/*<div className="w-full p-2    mt-35 flex gap-10 overflow-x-auto whitespace-nowrap">
-          {CardData.map((card) => (
-            <div
-              key={card.title}
-              className="w-[43vh] h-[62vh]  rounded-2xl inline-block flex-shrink-0"
-            >
-              <div className="w-full h-[84%]  rounded-2xl overflow-hidden">
-                <img
-                  className="w-full h-full object-cover "
-                  src={card.imageUrl}
-                  alt="images show only"
-                />
+        <div className="w-full overflow-hidden mt-30  p-2">
+          <div ref={marqueeRef} className="flex gap-10 whitespace-nowrap">
+            {CardData.map((card) => (
+              <div
+                key={card.title}
+                className="w-[43vh] h-[62vh] rounded-2xl inline-block flex-shrink-0"
+              >
+                <div className="w-full h-[84%] rounded-2xl overflow-hidden">
+                  <img
+                    className="w-full h-full object-cover"
+                    src={card.imageUrl}
+                    alt={card.title}
+                  />
+                </div>
+
+                <h1 className="text-xl capitalize text-white font-[Poppins] text-center mt-3">
+                  {card.title}
+                </h1>
               </div>
-              <h1 className="text-xl capitalize text-white font-[Poppins]  text-center mt-3 ">
-                {card.title}
-              </h1>
-            </div>
-          ))}
-        </div>*/}
-
-        <div className="w-full overflow-hidden mt-10 p-2">
-      <div
-        ref={marqueeRef}
-        className="flex gap-10 whitespace-nowrap"
-      >
-        {CardData.map((card) => (
-          <div
-            key={card.title}
-            className="w-[43vh] h-[62vh] rounded-2xl inline-block flex-shrink-0"
-          >
-            <div className="w-full h-[84%] rounded-2xl overflow-hidden">
-              <img
-                className="w-full h-full object-cover"
-                src={card.imageUrl}
-                alt={card.title}
-              />
-            </div>
-
-            <h1 className="text-xl capitalize text-white font-[Poppins] text-center mt-3">
-              {card.title}
-            </h1>
+            ))}
           </div>
-        ))}
-      </div>
-    </div>
+        </div>
       </section>
 
       <footer className="w-full h-[88vh] relative bg-[#E2C5CA] rounded-t-2xl flex items-start  justify-center overflow-hidden  ">
@@ -352,5 +327,5 @@ export default Home;
 //5:50 to 8:40 = 2:50
 //10:00 to 11:40 = 1:40
 //2:18 to 3:18 = 1:00
-//7:00 to 
+//7:00 to
 // 5Hourse 30Minat;
